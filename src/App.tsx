@@ -1,6 +1,7 @@
 import { CORE_CONCEPTS } from './data.ts';
 import Header from './components/Header/Header.tsx';
 import CoreConcept from './components/CoreConcepts/CoreConcepts.tsx';
+import TabButton from './components/TabButton/TabButton.tsx';
 
 function App() {
   return (
@@ -16,7 +17,15 @@ function App() {
             <CoreConcept {...CORE_CONCEPTS[3]} />
           </ul>
         </section>
-        <h2>Time to get started!</h2>
+        <section id="examples">
+          <h2>Examples</h2>
+          <menu>
+            <TabButton>Components</TabButton>
+            <TabButton>TSX</TabButton>
+            <TabButton>Props</TabButton>
+            <TabButton>State</TabButton>
+          </menu>
+        </section>
       </main>
     </div>
   );
