@@ -1,6 +1,6 @@
 import { CORE_CONCEPTS } from './data.ts';
-import Header from './components/Header.tsx';
-import CoreConcept from './components/CoreConcept.tsx';
+import Header from './components/Header/Header.tsx';
+import CoreConcept from './components/CoreConcepts/CoreConcepts.tsx';
 
 function App() {
   return (
