@@ -19,15 +19,22 @@ function Header() {
   )
 }
 
+const optionsList: String[] = ['count is', 'number of clicks', 'hits'];
+
+function getRamdonInt(max: any) {
+  return Math.floor(Math.random() * (max + 1));
+}
+
 function App() {
   const [count, setCount] = useState(0)
+  const optionString: String = optionsList[getRamdonInt(optionsList.length - 1)]
 
   return (
     <>
       <Header/>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+          {optionString} {count}
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
