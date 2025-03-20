@@ -11,6 +11,22 @@ function App() {
     setSelectedTab(selectedButton);
   }
 
+  let tabContent = <p>Please select tab</p>;
+
+  if (selectedTab) {
+    tabContent = (
+      <div id="tab-content">
+        <h3>{EXAMPLES[selectedTab as keyof typeof EXAMPLES].title}</h3>
+        <p>{EXAMPLES[selectedTab as keyof typeof EXAMPLES].description}</p>
+        <pre>
+          <code>
+            {EXAMPLES[selectedTab as keyof typeof EXAMPLES].code}
+          </code>
+        </pre>
+      </div>
+    )
+  }
+
   return (
     <div>
       <Header />
@@ -32,19 +48,7 @@ function App() {
             <TabButton onTabSelect={() => handleTabSelect('props')}>Props</TabButton>
             <TabButton onTabSelect={() => handleTabSelect('state')}>State</TabButton>
           </menu>
-          {!selectedTab ? (
-            <p>Please select tab</p>
-            ) : (
-            <div id="tab-content">
-              <h3>{EXAMPLES[selectedTab as keyof typeof EXAMPLES].title}</h3>
-              <p>{EXAMPLES[selectedTab as keyof typeof EXAMPLES].description}</p>
-              <pre>
-                <code>
-                  {EXAMPLES[selectedTab as keyof typeof EXAMPLES].code}
-                </code>
-              </pre>
-            </div>
-            )}
+          {tabContent}
         </section>
       </main>
     </div>
