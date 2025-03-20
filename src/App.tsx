@@ -4,8 +4,8 @@ import CoreConcept from './components/CoreConcepts/CoreConcepts.tsx';
 import TabButton from './components/TabButton/TabButton.tsx';
 
 function App() {
-  function handleTabSelect() {
-    console.log('test');
+  function handleTabSelect(selectedButton: String) {
+    console.log(selectedButton);
   }
 
   return (
@@ -24,12 +24,12 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onTabSelect={handleTabSelect}>Components</TabButton>
-            <TabButton onTabSelect={handleTabSelect}>TSX</TabButton>
-            <TabButton onTabSelect={handleTabSelect}>Props</TabButton>
-            <TabButton onTabSelect={handleTabSelect}>State</TabButton>
+            <TabButton onTabSelect={() => handleTabSelect('components')}>Components</TabButton>
+            <TabButton onTabSelect={() => handleTabSelect('tsx')}>TSX</TabButton>
+            <TabButton onTabSelect={() => handleTabSelect('props')}>Props</TabButton>
+            <TabButton onTabSelect={() => handleTabSelect('state')}>State</TabButton>
           </menu>
-
+          ~dynamic content~
         </section>
       </main>
     </div>
