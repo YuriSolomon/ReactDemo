@@ -1,7 +1,11 @@
 export default function TabButton({children}: any) {
+    function handleClick() {
+        console.log('test');
+    }
+
     return (
     <li>
-        <button>
+        <button onClick={handleClick}>
             {children}
         </button>
     </li>
