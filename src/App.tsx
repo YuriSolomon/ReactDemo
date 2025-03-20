@@ -5,7 +5,7 @@ import CoreConcept from './components/CoreConcepts/CoreConcepts.tsx';
 import TabButton from './components/TabButton/TabButton.tsx';
 
 function App() {
-  const [selectedTab, setSelectedTab]: any[] = useState('components');
+  const [selectedTab, setSelectedTab]: any[] = useState();
 
   function handleTabSelect(selectedButton: any) {
     setSelectedTab(selectedButton);
@@ -32,15 +32,19 @@ function App() {
             <TabButton onTabSelect={() => handleTabSelect('props')}>Props</TabButton>
             <TabButton onTabSelect={() => handleTabSelect('state')}>State</TabButton>
           </menu>
-          <div id="tab-content">
-            <h3>{EXAMPLES[selectedTab as keyof typeof EXAMPLES].title}</h3>
-            <p>{EXAMPLES[selectedTab as keyof typeof EXAMPLES].description}</p>
-            <pre>
-              <code>
-                {EXAMPLES[selectedTab as keyof typeof EXAMPLES].code}
-              </code>
-            </pre>
-          </div>
+          {!selectedTab ? (
+            <p>Please select tab</p>
+            ) : (
+            <div id="tab-content">
+              <h3>{EXAMPLES[selectedTab as keyof typeof EXAMPLES].title}</h3>
+              <p>{EXAMPLES[selectedTab as keyof typeof EXAMPLES].description}</p>
+              <pre>
+                <code>
+                  {EXAMPLES[selectedTab as keyof typeof EXAMPLES].code}
+                </code>
+              </pre>
+            </div>
+            )}
         </section>
       </main>
     </div>
