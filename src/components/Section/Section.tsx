@@ -1,4 +1,4 @@
-export default function Section({title, children, ...props}: any) {
+export default function Section({ title, children, ...props }: any) {
     return (
         <section {...props}>
             <h2>{title}</h2>
