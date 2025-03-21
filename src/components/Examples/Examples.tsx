@@ -1,5 +1,6 @@
 import { useState } from "react";
-import TabButton from "../TabButton/TabButton"
+import TabButton from "../TabButton/TabButton";
+import Section from "../Section/Section";
 import { EXAMPLES } from "../../data";
 
 export default function Examples() {
@@ -26,15 +27,14 @@ export default function Examples() {
     }
 
     return (
-        <section id="examples">
-        <h2>Examples</h2>
+        <Section title="Examples" id="examples">
         <menu>
-          <TabButton isSelected={selectedTab === 'components'} onTabSelect={() => handleTabSelect('components')}>Components</TabButton>
-          <TabButton isSelected={selectedTab === 'tsx'} onTabSelect={() => handleTabSelect('tsx')}>TSX</TabButton>
-          <TabButton isSelected={selectedTab === 'props'} onTabSelect={() => handleTabSelect('props')}>Props</TabButton>
-          <TabButton isSelected={selectedTab === 'state'} onTabSelect={() => handleTabSelect('state')}>State</TabButton>
+          <TabButton isSelected={selectedTab === 'components'} onClick={() => handleTabSelect('components')}>Components</TabButton>
+          <TabButton isSelected={selectedTab === 'tsx'} onClick={() => handleTabSelect('tsx')}>TSX</TabButton>
+          <TabButton isSelected={selectedTab === 'props'} onClick={() => handleTabSelect('props')}>Props</TabButton>
+          <TabButton isSelected={selectedTab === 'state'} onClick={() => handleTabSelect('state')}>State</TabButton>
         </menu>
         {tabContent}
-      </section>
+      </Section>
     )
 }
