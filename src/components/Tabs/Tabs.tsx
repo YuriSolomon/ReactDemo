@@ -1,9 +1,11 @@
-export default function Tabs({ children, buttons }: any) {
+export default function Tabs({ children, buttons, ButtonsContainer }: any) { //ButtonsContianer must be upper case
+    // const ButtonContainer = buttonContainer;  //can be used instead if prop starts with lower case
+    
     return (
         <>
-            <menu>
+            <ButtonsContainer>
                 {buttons}
-            </menu>
+            </ButtonsContainer>
             {children}
         </>
     )

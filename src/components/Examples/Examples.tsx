@@ -29,7 +29,7 @@ export default function Examples() {
 
     return (
         <Section title="Examples" id="examples">
-            <Tabs buttons={
+            <Tabs ButtonsContainer='menu' buttons={
                 <>
                     <TabButton isSelected={selectedTab === 'components'} onClick={() => handleTabSelect('components')}>Components</TabButton>
                     <TabButton isSelected={selectedTab === 'tsx'} onClick={() => handleTabSelect('tsx')}>TSX</TabButton>
