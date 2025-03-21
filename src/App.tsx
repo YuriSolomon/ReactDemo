@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { CORE_CONCEPTS, EXAMPLES } from './data.ts';
 import Header from './components/Header/Header.tsx';
-import CoreConcept from './components/CoreConcepts/CoreConcepts.tsx';
+import CoreConcept from './components/CoreConcept/CoreConcept.tsx';
 import TabButton from './components/TabButton/TabButton.tsx';
 
 function App() {
